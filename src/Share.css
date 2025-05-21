@@ -1,0 +1,12 @@
+.social {
+    align-items: center;
+    justify-content: center;
+}
+.social h3{
+    color: var(--text-color);
+}
+.socialbutton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

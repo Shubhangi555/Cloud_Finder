@@ -1,0 +1,193 @@
+/* Main container for the weather card section */
+*{
+    box-sizing: border-box;
+}
+.weather-container {
+    padding: 16px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+   
+}
+
+.card-content{
+    display: grid;
+    grid-template-columns: 20% auto;
+gap: 20px;
+}
+.each-card{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    padding: 10px;
+    
+}
+.each-card img{
+    width: 100%;
+    max-width: 8%;
+}
+
+/* Title styles */
+.title {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Loading container */
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+/* Loading icon style */
+.loading-icon {
+    font-size: 80px;
+    color: blue;
+}
+
+/* Loading text style */
+.loading-text {
+    margin-left: 16px;
+}
+
+/* Grid container for the forecast cards (horizontal layout) */
+.grid-container {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+    margin-top: 16px;
+    flex-wrap: wrap; /* Allow wrapping of cards on smaller screens */
+    overflow-x: hidden; /* Hide horizontal scrolling on small screens */
+}
+
+/* Card styles */
+.weather-card {
+    text-align: center;
+    padding: 16px;
+    min-width: 200px; /* Set minimum width for cards */
+    max-width: 300px; /* Limit card width for larger screens */
+    flex: 1 1 calc(33.33% - 16px); /* Flexible layout for desktop */
+    box-sizing: border-box; /* Include padding in element's total width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) ;
+}
+
+/* Image style inside the card */
+.weather-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 8px;
+}
+
+/* Date text style */
+.date-text {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+
+/* Responsive Design */
+
+/* For screens 1024px and below (tablets) */
+@media (max-width: 1024px) {
+    .grid-container {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center;   /* Center align the cards */
+        justify-content: center; /* Optional: Ensures full centering */
+        gap: 16px;         /* Maintain spacing between the cards */
+    }
+
+    .weather-card {
+        width: 100%;           /* Take full width or adjust as needed */
+        max-width: 300px;      /* Optional: Set a max width to prevent overly large cards */
+        margin: 0 auto;        /* Center the card horizontally */
+       
+        /* flex: 1 1 calc(50% - 12px); Two cards per row */
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+}
+
+/* For screens 768px and below (tablets and smaller devices) */
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.5rem; /* Smaller font size for tablet */
+    }
+
+    .grid-container {
+        gap: 8px; /* Less gap on tablet */
+    }
+
+    .weather-card {
+        flex: 1 1 calc(50% - 8px); /* Smaller cards */
+        padding: 12px; /* Reduce padding */
+        justify-content: space-evenly;
+    }
+}
+
+/* For small screens 480px and below (phones) */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.25rem; /* Smaller font size for small screens */
+    }
+
+    .grid-container {
+        flex-direction: column; /* Stack cards vertically on small screens */
+        align-items: center; /* Center the items */
+        gap: 12px; /* Adjust gap to look good on mobile */
+    }
+
+    .weather-card {
+        flex: 1 1 100%; /* Take full width on small screens */
+        margin-bottom: 8px; /* Smaller margin for mobile view */
+        padding: 12px; /* Reduced padding to save space */
+    }
+
+    .weather-icon {
+        width: 70px; /* Smaller icon for small screens */
+        height: 70px;
+    }
+
+    .date-text {
+        font-size: 1rem; /* Smaller date text size for small screens */
+    }
+}
+
+/* For Nexus and similar screens (width ~360px) */
+@media (max-width: 390px) {
+    .title {
+        font-size: 1.2rem; /* Further reduce title font size */
+    }
+
+    .grid-container {
+        flex-direction: column; /* Stack vertically */
+        gap: 8px; /* Reduce gap for better mobile view */
+    }
+
+    .weather-card {
+        padding: 8px; /* Reduce padding */
+    }
+
+    .weather-icon {
+        width: 60px; /* Smaller icons for small screens */
+        height: 60px;
+    }
+
+    .date-text {
+        font-size: 0.9rem; /* Smaller text for Nexus */
+    }
+}
+

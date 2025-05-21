@@ -1,0 +1,27 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --input-bg-color: #f0f0f0;
+  }
+  
+  .dark-mode {
+    --bg-color: #181818;
+    --text-color: #ffffff;
+    --input-bg-color: #fff8f8;
+  }
+  
+
+.search-box{
+  color: var(--text-color);
+  border-radius: 8px;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+input {
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+  }
+  
+  p {
+    color: var(--text-color);
+  }
